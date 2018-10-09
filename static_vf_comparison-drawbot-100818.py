@@ -17,8 +17,9 @@ text(testString, (xPos, yPos))
 # Linking a specific font file for testing. The text() method fails for this font, even though the font works as expected in FontView and on Axis-Praxis.org
 font("EncodeSans-mathfix-normal_wdth-VF.ttf", setFontSize)
 
-# It *does* work if I link to another variable font, such as Source Serif Variable.
-# font("SourceSerifVariable-Roman.ttf", setFontSize)
+# # It *does* work if I link to another variable font, such as Avenir Next Variable.
+# font("AvenirNext_Variable.ttf", setFontSize)
+
 
 for axis, data in listFontVariations().items():
     print((axis, data))
@@ -29,5 +30,5 @@ fontVariations(wght=400.0,wdth=500.0)
 blendMode("screen")
 fill(0,.75,1)
 
-# I recieve a NSInvalidArgumentException here, which Apple describes as "Name of an exception that occurs when you pass an invalid argument to a method, such as a nil pointer where a non-nil object is required." However, I only receive this 
+# I recieve a NSInvalidArgumentException here, which Apple describes as "Name of an exception that occurs when you pass an invalid argument to a method, such as a nil pointer where a non-nil object is required." However, I only receive this error when I set the font variations of the above variable font. So, the arguments should be valid.
 text(testString, (xPos, yPos))
